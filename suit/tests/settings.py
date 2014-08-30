@@ -1,4 +1,6 @@
 # Django settings for testproject project.
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -14,19 +16,20 @@ DATABASES = {
 }
 
 
-TIME_ZONE = 'Europe/Riga'
-LANGUAGE_CODE = 'en-uk'
+TIME_ZONE = 'America/Mexico_City'
+LANGUAGE_CODE = 'es-Mx'
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
-MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 SECRET_KEY = 'vaO4Y<g#YRWG8;Md8noiLp>.w(w~q_b=|1`?9<x>0KxA%UB!63'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
+
+TEMPLATE_DIRS = [os.path.join(os.path.dirname(__file__) , 'templates'),]
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -45,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
 
     'suit',
     'django.contrib.admin',
